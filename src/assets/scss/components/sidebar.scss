@@ -1,0 +1,110 @@
+.navbar {
+  left: 0;
+  top: 0;
+  background-color: white;
+  margin-top: 55px;
+  height: calc(100vh - 55px);
+  width: 250px;
+  align-items: flex-start;
+  padding: 15px 5px;
+  -webkit-box-shadow: 0 20px 15px 0 rgba(34, 41, 47, 0.1);
+  box-shadow: 0 20px 15px 0 rgba(34, 41, 47, 0.1);
+  z-index: 8;
+  transition: all 0.2s ease-in;
+  position: fixed;
+}
+
+.navbar .navbar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.navbar .navbar-menu .navbar-item {
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.navbar .navbar-menu .navbar-item a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  padding: 10px 15px 10px 20px;
+  border-radius: 100px;
+  color: #625f6e;
+  transition: all 0.2s ease-in;
+}
+
+.navbar .navbar-menu .navbar-item a i {
+  padding-right: 5px;
+  font-size: 16px;
+  transition: all 0.2s ease-in;
+  width: 30px;
+}
+
+.navbar .navbar-menu .navbar-item.active a {
+  background-color: var(--primary);
+  color: var(--primary-hover);
+  box-shadow: 0 0 10px 1px rgba(36, 209, 93, .7);
+  text-decoration: none;
+}
+
+.navbar .navbar-menu .navbar-item:not(.active):hover > * {
+  -webkit-transform: translateX(3px);
+  transform: translateX(3px);
+  text-decoration: none;
+}
+
+.navbar .navbar-menu .navbar-item.active a i {
+  color: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  body .navbar {
+    transform: translateX(-100%);
+    position: absolute;
+  }
+  .navbar.hide {
+    transform: translateX(0);
+    transition: transform 0s ease-in 0.2s;
+    animation: showNavbar 0.2s alternate;
+  }
+}
+
+@media (min-width: 768px) {
+  body .navbar {
+    transform: translateX(0);
+    transition: transform 0s ease-in 0.2s;
+    animation: showNavbar 0.2s alternate;
+  }
+  .navbar.hide {
+    transform: translateX(-100%);
+    position: absolute;
+    animation: hideNavbar 0.2s alternate;
+  }
+}
+
+@keyframes showNavbar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hideNavbar {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (min-width: 768px) {
+  body.navbar-show .wrapper {
+    width: 100%;
+  }
+}
