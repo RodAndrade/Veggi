@@ -38,8 +38,6 @@ Para melhor utilização, na raiz do repositório contem o arquivo `Insomnia.jso
 - Parâmetros via json:
     - `name`
     - `email`
-    - 
-    - `contacts` => array [{ id: int, phone: string }] // Pode ser enviado um array de objetos, onde se passar o parametro `id` junto com o `phone` o telefone é atualizado, se não, insere o telefone no contado
 
 `PUT /users/{id}` (Atualiza um usuário)
 - Parâmetros via json:
