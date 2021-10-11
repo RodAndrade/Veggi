@@ -78,6 +78,8 @@ Para clonar e rodar essa aplicação, você irá precisar de [Git](https://git-s
 
 
 - `git clone https://github.com/RodAndrade/Veggi/`
+
+Backend:
 - `cd Veggi/backend/` - cd into backend directory
 - `composer install` - Install composer dependencies
 - Enter your database credentials in the `.env.example` file located at the root of the project and save as `.env` 
@@ -85,6 +87,7 @@ Para clonar e rodar essa aplicação, você irá precisar de [Git](https://git-s
 - `php artisan make:seeder PeopleSeeder` - To run users seeds 
 - `php artisan serve --port=8000` - Run backend at port 8000 (Same port located at frontend baseurl)
   
+Frontend:
 - `cd ../frontend` - cd into frontend directory
 - `npm install` - To install all npm packages
 - Enter your api baseurl into `.env`
