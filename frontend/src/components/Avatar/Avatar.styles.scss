@@ -1,0 +1,44 @@
+.avatar {
+  .avatar-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: .857rem;
+    border-radius: 50%;
+    background-color: #EBECED;
+    color: #5c5c5c;
+    font-weight: 500;
+    margin-right: 10px;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 2px #fff;
+    transition: all .2s ease-in;
+  
+    &:not(.avatar-hover):hover {
+      border: 1px solid #FFF;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.4);
+    }
+  
+    &[color="primary"] {
+      background-color: var(--primary);
+      color: #FFF;
+    }
+  }
+  
+  .avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: all .2s ease-in;
+    box-shadow: 0 0 0 2px #fff;
+  
+    &:not(.avatar-hover):hover {
+      border: 1px solid #FFF;
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.4);
+    }
+  }
+}

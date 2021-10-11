@@ -1,0 +1,193 @@
+.tasks-page {
+  .tasks-scroll {
+    max-width: 100%;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    min-height: calc(100vh - 156px);
+  }
+
+  .tasks-header {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 20px;
+      color: #434343;
+      margin-bottom: 5px;
+    }
+
+    .tasks-headerUsers {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .avatar-initials,
+      .avatar-img {
+        margin-right: -5px;
+      }
+    }
+
+    .avatar {
+      margin-bottom: 5px;
+    }
+  }
+
+  .tasks-row {
+    width: 100%;
+    padding: 0 15px;
+
+    .tasks-col {
+      &:first-child {
+        padding-left: 0px;
+      }
+
+      &:last-child {
+        padding-right: 0px;
+      }
+
+      .task-list {
+        padding: 5px;
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+
+      .task-status {
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          border: none;
+          box-shadow: none;
+          color: #464646;
+          font-weight: 500;
+          margin-bottom: 0;
+        }
+
+        .task-statusCount {
+          font-size: 12px;
+          font-weight: 500;
+        }
+
+        // &:focus,
+        // &:hover {
+        //     background-color: #FFF;
+        // }
+      }
+
+      .task-novoTitulo {
+        min-height: 70px;
+        max-height: 150px;
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .task-btnNovaTask {
+        border: none;
+      }
+
+      .task-btnSalvarNovaTask {
+        background-color: var(--primary);
+        border-color: var(--primary);
+
+        &:focus {
+          border: 1px solid var(--primary);
+          box-shadow: 0 0 10px 1px rgba(153, 247, 184, 0.3);
+        }
+      }
+
+      .task-description {
+        max-height: 40px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        white-space: pre-line;
+        overflow: hidden;
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .task-divNewCard {
+    transform: scaleY(0);
+    transform-origin: top;
+    animation: showNewTask 0.3s normal forwards ease-in-out;
+  }
+
+  .task-avatarLink {
+    text-decoration: none;
+
+    &:hover {
+      z-index: 1;
+    }
+  }
+
+  .task-limparFiltros {
+    font-size: 12px;
+    align-self: center;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #464646;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 0 2px #fff;
+    }
+  }
+}
+
+.task-modal {
+  display: flex;
+  justify-content: center;
+
+  .react-modal-sheet-container {
+    max-width: 680px;
+    left: auto !important;
+  }
+}
+
+@keyframes showNewTask {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@supports (scroll-snap-align: start) {
+  /* modern scroll snap points */
+  .tasks-scroll {
+    scroll-snap-type: x mandatory;
+  }
+  .tasks-col {
+    scroll-snap-align: center;
+  }
+}
+
+@supports not (scroll-snap-align: start) {
+  /* old scroll snap points spec */
+  .tasks-scroll {
+    -webkit-scroll-snap-type: mandatory;
+    scroll-snap-type: mandatory;
+    -webkit-scroll-snap-destination: 0 50%;
+    scroll-snap-destination: 0 50%;
+    -webkit-scroll-snap-points-x: repeat(100%);
+    scroll-snap-points-x: repeat(100%);
+  }
+
+  .tasks-col {
+    scroll-snap-coordinate: 0 0;
+  }
+}

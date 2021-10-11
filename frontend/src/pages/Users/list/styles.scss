@@ -1,0 +1,86 @@
+.users-list {
+    .rdt_Table,
+    .rdt_TableHeadRow {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .react-paginate {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .userRow {
+        padding: 5px 0px;
+
+        .user-avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            font-size: .857rem;
+            border-radius: 50%;
+            background-color: #82868b1f;
+            color: #5c5c5c;
+            margin-right: 10px;
+            text-transform: uppercase;
+        }
+
+        .user-name {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+    }
+
+    .user-options {
+        .dropdown-menu {
+            padding: 0;
+        }
+
+        .dropdown-item {
+            padding: .55rem 1rem;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .user-search-icon {
+        padding: 5px 12px 7px 10px;
+    }
+
+    .card-body {
+      border-radius: 20px;
+    }
+
+    .user-cad-button {
+      border-radius: 20px !important;
+      margin-left: 10px !important;
+      font-weight: 500;
+
+      svg {
+        margin-top: -2px;
+      }
+
+      span {
+        margin-left: 5px;
+      }
+    }
+
+    .card-filter {
+      background-color: #f3f2f7;
+    }
+}
+
+@media (max-width: 769px) {
+  .user-cad-button span {
+    display: none;
+  }
+}

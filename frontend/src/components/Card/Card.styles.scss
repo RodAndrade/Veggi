@@ -1,0 +1,11 @@
+.cardStyled {
+  border-radius: 20px !important;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+  padding: 15px 15px;
+
+  .cardBodyStyled {
+    padding: 0;
+  }
+}
