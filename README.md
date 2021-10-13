@@ -82,7 +82,7 @@ Backend:
 - `composer install` - Install composer dependencies
 - Enter your database credentials in the `.env.example` file located at the root of the project and save as `.env` 
 - `php artisan migrate` - To run migrations
-- `php artisan make:seeder PeopleSeeder` - To run users seeds 
+- `php artisan db:seed --class=PeopleSeeder` - To run users seeds 
 - `php artisan serve --port=8000` - Run backend at port 8000 (Same port located at frontend baseurl)
   
 Frontend:
